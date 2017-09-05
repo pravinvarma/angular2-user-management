@@ -24,6 +24,10 @@ import { RouterModule }   from '@angular/router';
      {
     path: 'applist',
     component: AppList
+  },
+         {
+    path: '',
+    component: AppList
   }
     ])
   ], //In the example of the simple root module above, the application module needs material from within that BrowserModule. To access that material, add it to the @NgModule metadata imports like this. imports:      [ BrowserModule ],
