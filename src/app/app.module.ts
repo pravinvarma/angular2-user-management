@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser'; // You also import Ng
 import { NgModule } from '@angular/core'; // import Angular's Component decorator from the @angular/core library like this:
 import { AppLogincomponent }     from './app.loginComponent';
 import { AppList }     from './app.list';
+import { AppDetail } from './app.detail';
 import { AppComponent } from './app.component';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
@@ -11,7 +12,8 @@ import { RouterModule }   from '@angular/router';
   declarations: [  //import, exports, providers, bootstrap
     AppComponent, //view classes - three types component, directive, pipes
       AppLogincomponent,
-      AppList
+      AppList,
+      AppDetail
   ],
   imports: [ // other modles whose exported classes are needed by component template are declared here
     BrowserModule,
@@ -24,6 +26,10 @@ import { RouterModule }   from '@angular/router';
      {
     path: 'applist',
     component: AppList
+  },
+    {
+    path: 'appdetail',
+    component: AppDetail
   },
          {
     path: '',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Hero }    from './hero';
+import { User }    from './user';
 import { Router } from '@angular/router';
 @Component({ //@Component decorator, tells angular is a component and attach metadata to it to be a angular component
   selector: 'app-login',
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AppLogincomponent {
 constructor( private router: Router){};
-  model = new Hero(null,'',''); 
+  model = new User(null,'',''); 
   submitted = false;
-arr = JSON.parse(localStorage.getItem('obj'));
-    idC = 0;
+    arr = JSON.parse(localStorage.getItem('obj')) || [];
+    idC = this.arr.length-1;
 onSubmit(model1) {
    this.idC++;
 this.submitted = true; 
