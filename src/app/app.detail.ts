@@ -1,7 +1,7 @@
 //import
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User }    from './user';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 //decorate
 @Component({
@@ -10,7 +10,18 @@ import { Router } from '@angular/router';
   /*,styleUrls: ['./app.login.css']*/
 })
 
-export class AppDetail{
-
-
+export class AppDetail implements OnInit{
+selectedUser: User;
+constructor(private route: ActivatedRoute) {}
+  ngOnInit() {
+    // get param
+    let param = this.route.snapshot.params["id"];
+    let userList = JSON.parse(localStorage.getItem('obj'));
+      
+    this.selectedUser = userList.filter(function(user){
+        if(user.id == param){
+            return user
+        }
+    });
+    }
 }

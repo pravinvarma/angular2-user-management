@@ -1,3 +1,7 @@
 <div class="container">
-    Details
+     <h3 class="page-header">User Details</h3>
+     <div *ngIf="selectedUser">
+         <p><label>Name:</label> {{selectedUser[0].name}} </p>
+      <p><label>Email: </label> {{selectedUser[0].email}}</p>
+    </div>
 </div>

@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AppList {
 selectedUser: User;
-    constructor( private router: Router){this.router.navigate(['/applist']);  };
-    user = JSON.parse(localStorage.getItem('obj'));
+constructor( private router: Router){this.router.navigate(['/applist']);  };
+user = JSON.parse(localStorage.getItem('obj'));
 onSelect(user: User):void{
 this.selectedUser = user;
 this.router.navigate(['/appdetail',{id:this.selectedUser.id}]);  };
